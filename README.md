@@ -1,7 +1,10 @@
 <div align="left">
   
-# Skyblock Auction Flipper
+# Skyblock Auction Flipper<div align="right">UP TO DATE ✅
+<br>
+<div align="left">
 This runs on command prompt on your computer to look for auctions that may be worth flipping. You enter in your money, min profit, and min price, and the amount of time you want this to run for. This will automaticly scan the auction house for you with no delay.
+
 
 # Dependancies
 ## This code requires some python extensions: <br>
