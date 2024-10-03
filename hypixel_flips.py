@@ -2,7 +2,6 @@ import requests
 import time
 import pyperclip
 import tkinter as tk
-from tkinter import messagebox
 from tkinter import ttk
 import threading
 
@@ -106,7 +105,8 @@ def find_profitable_flips(max_money, min_profit, min_price, duration, update_gui
                     continue
 
                 average_ah_price = get_average_ah_price(item_name, rarity)
-                if average_ah_price and starting_bid < average_ah_price:
+                if average_ah_price:
+                    # Updated profit calculation
                     profit = average_ah_price - starting_bid
                     if profit >= min_profit:
                         # Update the GUI with the new profitable item
@@ -115,6 +115,8 @@ def find_profitable_flips(max_money, min_profit, min_price, duration, update_gui
                             'rarity': rarity,
                             'profit': profit,
                             'auction_id': auction_id,
+                            'starting_bid': starting_bid,
+                            'average_ah_price': average_ah_price,
                             'type': 'BIN to Auction'
                         })
                         print(f"Found profitable item: {item_name} (Rarity: {rarity}), Profit: {profit}")
@@ -125,7 +127,6 @@ def find_profitable_flips(max_money, min_profit, min_price, duration, update_gui
 
 def copy_to_clipboard(text):
     pyperclip.copy(text)
-    messagebox.showinfo("Clipboard", f"Copied to clipboard: {text}")
 
 def display_profitable_items_in_real_time():
     # Create the main window
@@ -178,7 +179,7 @@ def display_profitable_items_in_real_time():
         # Create a nicely styled button for each item found in real-time
         button = tk.Button(scrollable_frame, text=f"Item: {item['item_name']} (Profit: {format_number(item['profit'])})",
                            font=("Arial", 12), bg="#1abc9c", fg="white", pady=5, padx=10,
-                           command=lambda c=command: copy_to_clipboard(c))
+                           command=lambda: copy_to_clipboard(command))
         button.pack(pady=10, padx=10, fill='x')
 
         # Auto-scroll if the user hasn't scrolled up manually
