@@ -1,6 +1,6 @@
 <div align="left">
   
-# Skyblock Auction Flipper<div align="right">UP TO DATE ✅
+# Skyblock Auction Flipper<div align="right">YOU DON'T NEED A KEY, CODE BEING REDONE ⚠️
 <br>
 <div align="left">
 This runs on command prompt on your computer to look for auctions that may be worth flipping. You enter in your money, min profit, and min price, and the amount of time you want this to run for. This will automaticly scan the auction house for you with no delay. You can also copy the command to open the listing in game by clicking the item you want in the menu that is opened.
